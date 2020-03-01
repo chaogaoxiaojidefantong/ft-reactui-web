@@ -1,4 +1,5 @@
-import React,{ Component } from 'react';
+import React,{ Component,MouseEvent } from 'react';
+
 interface Props{
     render?:any;
 }
@@ -9,7 +10,7 @@ class Mouse extends Component<Props,{}> {
       this.state = { x: 0, y: 200 };
     }
   
-    handleMouseMove(event) {
+    handleMouseMove(event:MouseEvent) {
       this.setState({
         x: event.clientX,
         y: event.clientY

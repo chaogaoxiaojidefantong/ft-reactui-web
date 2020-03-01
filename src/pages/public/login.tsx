@@ -1,7 +1,6 @@
 import React, { Component,Fragment } from 'react';
 import Authenticate from '../../router/verify/authenticate'
 import userActions from '../../actions/UserActions'
-import {FtLoginForm} from '../../components/ft/index'
 import UserIe from '../../interface/UserIe';
 import { Notify} from 'zent';
 import history from '../../router/history'
@@ -45,12 +44,9 @@ class Login extends Component{
     }
     render(){
         return(            
-            <Fragment >   
-                <ErrorBoundary>
-                <FtLoginForm submit={this.submit.bind(this)} width='200px' >                
-                </FtLoginForm>  
-                </ErrorBoundary>                    
-                </Fragment>
+            <Fragment >
+                login                   
+            </Fragment>
         )
     }
 }

@@ -1,4 +1,8 @@
  import stringUtil from './stringUtil'
+ type VerifyObjType={
+      (obj:object):boolean
+ }
+
  class ObjUtil{
    //验证对象里的字符串是否有空值,true为有，false为没有
     verifyObj(obj:any){
