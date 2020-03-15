@@ -5,6 +5,7 @@ function FtP1(props:PropsType){
     function handleClick(){
         //props.onClick();
     }
+ 
     return(
         <Fragment>
             <p className="ft-p1" onClick={handleClick}>{props.children}</p>

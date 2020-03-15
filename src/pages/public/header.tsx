@@ -2,6 +2,7 @@ import React, { Component,Fragment } from 'react';
 import {Select} from 'element-react'
 import '../../style/public/header.less'
 import {FtHeader} from '../../components/ft/index';
+
 interface StateIe{
     options:Array<any>,
     value:string
@@ -20,9 +21,13 @@ class Header extends Component{
     constructor(props:any){
         super(props)
     }
+    componentDidMount(){
+      
+    }
     render(){
         return (
         <Fragment>
+        
           <FtHeader width='77vw' left={<b>ftui-react组件库</b>}>
               <div><input type='text' placeholder='请输入搜索的组件'></input></div>
               <Select value={this.state.value} placeholder="请选择">

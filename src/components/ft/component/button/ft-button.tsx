@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import '../../style/button/ft-button.less'
 const ThemeContext=React.createContext('light')
-
+import FtP1 from '../p/ft-p1'
 class FtButton extends Component{
      static contextType=ThemeContext;
+     state={num:1}
   componentDidUpdate(){
     
   }
@@ -14,7 +15,7 @@ class FtButton extends Component{
         let value=this.context;
         return(
             <Fragment>
-                <button>{this.props.children}</button>
+                <button >{this.props.children}</button>
             </Fragment>
         )
     }
