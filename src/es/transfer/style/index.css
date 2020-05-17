@@ -1,0 +1,273 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+@-webkit-keyframes antCheckboxEffect {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@keyframes antCheckboxEffect {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+    opacity: 0;
+  }
+}
+.ft-transfer-customize-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.ft-transfer-customize-list .ft-transfer-operation {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+.ft-transfer-customize-list .ft-transfer-list {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  width: auto;
+  height: auto;
+  min-height: 200px;
+}
+.ft-transfer-customize-list .ft-transfer-list-body-with-search {
+  padding-top: 0;
+}
+.ft-transfer-customize-list .ft-transfer-list-body-search-wrapper {
+  position: relative;
+  padding-bottom: 0;
+}
+.ft-transfer-customize-list .ft-transfer-list-body-customize-wrapper {
+  padding: 12px;
+}
+.ft-transfer-customize-list .ft-table-wrapper .ft-table-small {
+  border: 0;
+  border-radius: 0;
+}
+.ft-transfer-customize-list .ft-table-wrapper .ft-table-small > .ft-table-content > .ft-table-body > table > .ft-table-thead > tr > th {
+  background: #fafafa;
+}
+.ft-transfer-customize-list .ft-table-wrapper .ft-table-small > .ft-table-content .ft-table-row:last-child td {
+  border-bottom: 1px solid #f0f0f0;
+}
+.ft-transfer-customize-list .ft-table-wrapper .ft-table-small .ft-table-body {
+  margin: 0;
+}
+.ft-transfer-customize-list .ft-table-wrapper .ft-table-pagination.ft-pagination {
+  margin: 16px 0 4px;
+}
+.ft-transfer-customize-list .ft-input[disabled] {
+  background-color: transparent;
+}
+.ft-transfer {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+          font-feature-settings: 'tnum';
+  position: relative;
+}
+.ft-transfer-disabled .ft-transfer-list {
+  background: #f5f5f5;
+}
+.ft-transfer-list {
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  height: 200px;
+  padding-top: 40px;
+  vertical-align: middle;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+}
+.ft-transfer-list-with-footer {
+  padding-bottom: 34px;
+}
+.ft-transfer-list-search {
+  padding-right: 24px !important;
+  padding-left: 8px;
+}
+.ft-transfer-list-search-action {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  bottom: 12px;
+  width: 28px;
+  color: rgba(0, 0, 0, 0.25);
+  line-height: 32px;
+  text-align: center;
+}
+.ft-transfer-list-search-action .anticon {
+  color: rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.ft-transfer-list-search-action .anticon:hover {
+  color: rgba(0, 0, 0, 0.45);
+}
+span.ft-transfer-list-search-action {
+  pointer-events: none;
+}
+.ft-transfer-list-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 12px 9px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.65);
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 2px 2px 0 0;
+}
+.ft-transfer-list-header-title {
+  position: absolute;
+  right: 12px;
+}
+.ft-transfer-list-header .ft-checkbox-wrapper + span {
+  padding-left: 8px;
+}
+.ft-transfer-list-body {
+  position: relative;
+  height: 100%;
+  font-size: 14px;
+}
+.ft-transfer-list-body-search-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+}
+.ft-transfer-list-body-with-search {
+  padding-top: 56px;
+}
+.ft-transfer-list-content {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+.ft-transfer-list-content-item {
+  min-height: 32px;
+  padding: 6px 12px;
+  overflow: hidden;
+  line-height: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.ft-transfer-list-content-item > span {
+  padding-right: 0;
+}
+.ft-transfer-list-content-item-text {
+  padding-left: 8px;
+}
+.ft-transfer-list-content-item:not(.ft-transfer-list-content-item-disabled):hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+.ft-transfer-list-content-item-checked {
+  background-color: #e6f7ff;
+}
+.ft-transfer-list-content-item-disabled {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+.ft-transfer-list-body-not-found {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  padding-top: 0;
+  color: rgba(0, 0, 0, 0.25);
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.ft-transfer-list-body-with-search .ft-transfer-list-body-not-found {
+  margin-top: 16px;
+}
+.ft-transfer-list-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #f0f0f0;
+  border-radius: 0 0 2px 2px;
+}
+.ft-transfer-operation {
+  display: inline-block;
+  margin: 0 8px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.ft-transfer-operation .ft-btn {
+  display: block;
+}
+.ft-transfer-operation .ft-btn:first-child {
+  margin-bottom: 4px;
+}
+.ft-transfer-operation .ft-btn .anticon {
+  font-size: 12px;
+}
+.ft-transfer .ft-empty-image {
+  max-height: -2px;
+}
+.ft-transfer-rtl {
+  direction: rtl;
+}
+.ft-transfer-rtl .ft-transfer-list-search-action {
+  right: auto;
+  left: 12px;
+}
+.ft-transfer-rtl .ft-transfer-list-header {
+  right: 0;
+  left: auto;
+}
+.ft-transfer-rtl .ft-transfer-list-header-title {
+  right: auto;
+  left: 12px;
+}
+.ft-transfer-rtl .ft-transfer-list-header .ft-checkbox-wrapper + span {
+  padding-right: 8px;
+  padding-left: 0;
+}
+.ft-transfer-rtl .ft-transfer-list-body-search-wrapper {
+  right: 0;
+  left: auto;
+}
+.ft-transfer-rtl .ft-transfer-list-content-item > span {
+  padding-left: 0;
+}
+.ft-transfer-rtl .ft-transfer-list-content-item-text {
+  padding-right: 8px;
+  padding-left: 0;
+}
+.ft-transfer-rtl .ft-transfer-list-footer {
+  right: 0;
+  left: auto;
+}

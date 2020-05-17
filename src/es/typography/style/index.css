@@ -1,0 +1,255 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.ft-typography {
+  color: rgba(0, 0, 0, 0.65);
+}
+.ft-typography.ft-typography-secondary {
+  color: rgba(0, 0, 0, 0.45);
+}
+.ft-typography.ft-typography-warning {
+  color: #faad14;
+}
+.ft-typography.ft-typography-danger {
+  color: #ff4d4f;
+}
+.ft-typography.ft-typography-disabled {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+div.ft-typography,
+.ft-typography p {
+  margin-bottom: 1em;
+}
+h1.ft-typography,
+.ft-typography h1 {
+  margin-bottom: 0.5em;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 1.23;
+}
+h2.ft-typography,
+.ft-typography h2 {
+  margin-bottom: 0.5em;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.35;
+}
+h3.ft-typography,
+.ft-typography h3 {
+  margin-bottom: 0.5em;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.35;
+}
+h4.ft-typography,
+.ft-typography h4 {
+  margin-bottom: 0.5em;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.ft-typography + h1.ft-typography,
+.ft-typography + h2.ft-typography,
+.ft-typography + h3.ft-typography,
+.ft-typography + h4.ft-typography {
+  margin-top: 1.2em;
+}
+.ft-typography div + h1,
+.ft-typography ul + h1,
+.ft-typography li + h1,
+.ft-typography p + h1,
+.ft-typography h1 + h1,
+.ft-typography h2 + h1,
+.ft-typography h3 + h1,
+.ft-typography h4 + h1,
+.ft-typography div + h2,
+.ft-typography ul + h2,
+.ft-typography li + h2,
+.ft-typography p + h2,
+.ft-typography h1 + h2,
+.ft-typography h2 + h2,
+.ft-typography h3 + h2,
+.ft-typography h4 + h2,
+.ft-typography div + h3,
+.ft-typography ul + h3,
+.ft-typography li + h3,
+.ft-typography p + h3,
+.ft-typography h1 + h3,
+.ft-typography h2 + h3,
+.ft-typography h3 + h3,
+.ft-typography h4 + h3,
+.ft-typography div + h4,
+.ft-typography ul + h4,
+.ft-typography li + h4,
+.ft-typography p + h4,
+.ft-typography h1 + h4,
+.ft-typography h2 + h4,
+.ft-typography h3 + h4,
+.ft-typography h4 + h4 {
+  margin-top: 1.2em;
+}
+span.ft-typography-ellipsis {
+  display: inline-block;
+}
+.ft-typography a {
+  color: #1890ff;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.ft-typography a:focus,
+.ft-typography a:hover {
+  color: #40a9ff;
+}
+.ft-typography a:active {
+  color: #096dd9;
+}
+.ft-typography a:active,
+.ft-typography a:hover {
+  text-decoration: none;
+}
+.ft-typography a[disabled] {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.ft-typography code {
+  margin: 0 0.2em;
+  padding: 0.2em 0.4em 0.1em;
+  font-size: 85%;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+}
+.ft-typography mark {
+  padding: 0;
+  background-color: #ffe58f;
+}
+.ft-typography u,
+.ft-typography ins {
+  text-decoration: underline;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+.ft-typography s,
+.ft-typography del {
+  text-decoration: line-through;
+}
+.ft-typography strong {
+  font-weight: 600;
+}
+.ft-typography-expand,
+.ft-typography-edit,
+.ft-typography-copy {
+  color: #1890ff;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  margin-left: 8px;
+}
+.ft-typography-expand:focus,
+.ft-typography-edit:focus,
+.ft-typography-copy:focus,
+.ft-typography-expand:hover,
+.ft-typography-edit:hover,
+.ft-typography-copy:hover {
+  color: #40a9ff;
+}
+.ft-typography-expand:active,
+.ft-typography-edit:active,
+.ft-typography-copy:active {
+  color: #096dd9;
+}
+.ft-typography-copy-success,
+.ft-typography-copy-success:hover,
+.ft-typography-copy-success:focus {
+  color: #52c41a;
+}
+.ft-typography-edit-content {
+  position: relative;
+}
+div.ft-typography-edit-content {
+  left: -12px;
+  margin-top: -5px;
+  margin-bottom: calc(1em - 4px - 2px);
+}
+.ft-typography-edit-content-confirm {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  color: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+.ft-typography-edit-content textarea {
+  -moz-transition: none;
+}
+.ft-typography ul,
+.ft-typography ol {
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+.ft-typography ul li,
+.ft-typography ol li {
+  margin: 0 0 0 20px;
+  padding: 0 0 0 4px;
+}
+.ft-typography ul {
+  list-style-type: circle;
+}
+.ft-typography ul ul {
+  list-style-type: disc;
+}
+.ft-typography ol {
+  list-style-type: decimal;
+}
+.ft-typography-ellipsis-single-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+span.ft-typography-ellipsis-single-line {
+  vertical-align: bottom;
+}
+.ft-typography-ellipsis-multiple-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /*! autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ft-typography-rtl {
+  direction: rtl;
+}
+.ft-typography-rtl .ft-typography-expand,
+.ft-typography-rtl .ft-typography-edit,
+.ft-typography-rtl .ft-typography-copy {
+  margin-right: 8px;
+  margin-left: 0;
+}
+div.ft-typography-edit-content.ft-typography-rtl {
+  right: -12px;
+  left: auto;
+}
+.ft-typography-rtl .ft-typography-edit-content-confirm {
+  right: auto;
+  left: 10px;
+}
+.ft-typography-rtl.ft-typography ul li,
+.ft-typography-rtl.ft-typography ol li {
+  margin: 0 20px 0 0;
+  padding: 0 4px 0 0;
+}

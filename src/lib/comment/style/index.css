@@ -1,0 +1,124 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.ft-comment {
+  position: relative;
+  background-color: inherit;
+}
+.ft-comment-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 16px 0;
+}
+.ft-comment-avatar {
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.ft-comment-avatar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.ft-comment-content {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  min-width: 1px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+.ft-comment-content-author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+.ft-comment-content-author > a,
+.ft-comment-content-author > span {
+  padding-right: 8px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.ft-comment-content-author-name {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.ft-comment-content-author-name > * {
+  color: rgba(0, 0, 0, 0.45);
+}
+.ft-comment-content-author-name > *:hover {
+  color: rgba(0, 0, 0, 0.45);
+}
+.ft-comment-content-author-time {
+  color: #ccc;
+  white-space: nowrap;
+  cursor: auto;
+}
+.ft-comment-content-detail p {
+  margin-bottom: inherit;
+  white-space: pre-wrap;
+}
+.ft-comment-actions {
+  margin-top: 12px;
+  margin-bottom: inherit;
+  padding-left: 0;
+}
+.ft-comment-actions > li {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.45);
+}
+.ft-comment-actions > li > span {
+  padding-right: 10px;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.ft-comment-actions > li > span:hover {
+  color: #595959;
+}
+.ft-comment-nested {
+  margin-left: 44px;
+}
+.ft-comment-rtl {
+  direction: rtl;
+}
+.ft-comment-rtl .ft-comment-avatar {
+  margin-right: 0;
+  margin-left: 12px;
+}
+.ft-comment-rtl .ft-comment-content-author > a,
+.ft-comment-rtl .ft-comment-content-author > span {
+  padding-right: 0;
+  padding-left: 8px;
+}
+.ft-comment-rtl .ft-comment-actions {
+  padding-right: 0;
+}
+.ft-comment-rtl .ft-comment-actions > li > span {
+  padding-right: 0;
+  padding-left: 10px;
+}
+.ft-comment-rtl .ft-comment-nested {
+  margin-right: 44px;
+  margin-left: 0;
+}

@@ -1,0 +1,341 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.ft-badge {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+          font-feature-settings: 'tnum';
+  position: relative;
+  display: inline-block;
+  color: unset;
+  line-height: 1;
+}
+.ft-badge-count {
+  z-index: auto;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+  text-align: center;
+  background: #ff4d4f;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 0 1px #fff;
+          box-shadow: 0 0 0 1px #fff;
+}
+.ft-badge-count a,
+.ft-badge-count a:hover {
+  color: #fff;
+}
+.ft-badge-multiple-words {
+  padding: 0 8px;
+}
+.ft-badge-dot {
+  z-index: auto;
+  width: 6px;
+  height: 6px;
+  background: #ff4d4f;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 0 0 1px #fff;
+          box-shadow: 0 0 0 1px #fff;
+}
+.ft-badge-count,
+.ft-badge-dot,
+.ft-badge .ft-scroll-number-custom-component {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  -webkit-transform-origin: 100% 0%;
+          transform-origin: 100% 0%;
+}
+.ft-badge-status {
+  line-height: inherit;
+  vertical-align: baseline;
+}
+.ft-badge-status-dot {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.ft-badge-status-success {
+  background-color: #52c41a;
+}
+.ft-badge-status-processing {
+  position: relative;
+  background-color: #1890ff;
+}
+.ft-badge-status-processing::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #1890ff;
+  border-radius: 50%;
+  -webkit-animation: antStatusProcessing 1.2s infinite ease-in-out;
+          animation: antStatusProcessing 1.2s infinite ease-in-out;
+  content: '';
+}
+.ft-badge-status-default {
+  background-color: #d9d9d9;
+}
+.ft-badge-status-error {
+  background-color: #ff4d4f;
+}
+.ft-badge-status-warning {
+  background-color: #faad14;
+}
+.ft-badge-status-pink {
+  background: #eb2f96;
+}
+.ft-badge-status-magenta {
+  background: #eb2f96;
+}
+.ft-badge-status-red {
+  background: #f5222d;
+}
+.ft-badge-status-volcano {
+  background: #fa541c;
+}
+.ft-badge-status-orange {
+  background: #fa8c16;
+}
+.ft-badge-status-yellow {
+  background: #fadb14;
+}
+.ft-badge-status-gold {
+  background: #faad14;
+}
+.ft-badge-status-cyan {
+  background: #13c2c2;
+}
+.ft-badge-status-lime {
+  background: #a0d911;
+}
+.ft-badge-status-green {
+  background: #52c41a;
+}
+.ft-badge-status-blue {
+  background: #1890ff;
+}
+.ft-badge-status-geekblue {
+  background: #2f54eb;
+}
+.ft-badge-status-purple {
+  background: #722ed1;
+}
+.ft-badge-status-text {
+  margin-left: 8px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+}
+.ft-badge-zoom-appear,
+.ft-badge-zoom-enter {
+  -webkit-animation: antZoomBadgeIn 0.3s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+          animation: antZoomBadgeIn 0.3s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.ft-badge-zoom-leave {
+  -webkit-animation: antZoomBadgeOut 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6);
+          animation: antZoomBadgeOut 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.ft-badge-not-a-wrapper:not(.ft-badge-status) {
+  vertical-align: middle;
+}
+.ft-badge-not-a-wrapper .ft-scroll-number {
+  position: relative;
+  top: auto;
+  display: block;
+}
+.ft-badge-not-a-wrapper .ft-badge-count {
+  -webkit-transform: none;
+          transform: none;
+}
+@-webkit-keyframes antStatusProcessing {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(2.4);
+            transform: scale(2.4);
+    opacity: 0;
+  }
+}
+@keyframes antStatusProcessing {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(2.4);
+            transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.ft-scroll-number {
+  overflow: hidden;
+}
+.ft-scroll-number-only {
+  display: inline-block;
+  height: 20px;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ft-scroll-number-only > p.ft-scroll-number-only-unit {
+  height: 20px;
+  margin: 0;
+}
+.ft-scroll-number-symbol {
+  vertical-align: top;
+}
+@-webkit-keyframes antZoomBadgeIn {
+  0% {
+    -webkit-transform: scale(0) translate(50%, -50%);
+            transform: scale(0) translate(50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1) translate(50%, -50%);
+            transform: scale(1) translate(50%, -50%);
+  }
+}
+@keyframes antZoomBadgeIn {
+  0% {
+    -webkit-transform: scale(0) translate(50%, -50%);
+            transform: scale(0) translate(50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1) translate(50%, -50%);
+            transform: scale(1) translate(50%, -50%);
+  }
+}
+@-webkit-keyframes antZoomBadgeOut {
+  0% {
+    -webkit-transform: scale(1) translate(50%, -50%);
+            transform: scale(1) translate(50%, -50%);
+  }
+  100% {
+    -webkit-transform: scale(0) translate(50%, -50%);
+            transform: scale(0) translate(50%, -50%);
+    opacity: 0;
+  }
+}
+@keyframes antZoomBadgeOut {
+  0% {
+    -webkit-transform: scale(1) translate(50%, -50%);
+            transform: scale(1) translate(50%, -50%);
+  }
+  100% {
+    -webkit-transform: scale(0) translate(50%, -50%);
+            transform: scale(0) translate(50%, -50%);
+    opacity: 0;
+  }
+}
+.ft-badge-rtl {
+  direction: rtl;
+}
+.ft-badge-rtl .ft-badge-count,
+.ft-badge-rtl .ft-badge-dot,
+.ft-badge-rtl .ft-badge .ft-scroll-number-custom-component {
+  right: auto;
+  left: 0;
+  direction: ltr;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+.ft-badge-rtl.ft-badge .ft-scroll-number-custom-component {
+  right: auto;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+.ft-badge-rtl .ft-badge-status-text {
+  margin-right: 8px;
+  margin-left: 0;
+}
+.ft-badge-rtl .ft-badge-zoom-appear,
+.ft-badge-rtl .ft-badge-zoom-enter {
+  -webkit-animation-name: antZoomBadgeInRtl;
+          animation-name: antZoomBadgeInRtl;
+}
+.ft-badge-rtl .ft-badge-zoom-leave {
+  -webkit-animation-name: antZoomBadgeOutRtl;
+          animation-name: antZoomBadgeOutRtl;
+}
+.ft-badge-not-a-wrapper .ft-badge-count {
+  -webkit-transform: none;
+          transform: none;
+}
+@-webkit-keyframes antZoomBadgeInRtl {
+  0% {
+    -webkit-transform: scale(0) translate(-50%, -50%);
+            transform: scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+}
+@keyframes antZoomBadgeInRtl {
+  0% {
+    -webkit-transform: scale(0) translate(-50%, -50%);
+            transform: scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+}
+@-webkit-keyframes antZoomBadgeOutRtl {
+  0% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+  100% {
+    -webkit-transform: scale(0) translate(-50%, -50%);
+            transform: scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+@keyframes antZoomBadgeOutRtl {
+  0% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+  100% {
+    -webkit-transform: scale(0) translate(-50%, -50%);
+            transform: scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+}

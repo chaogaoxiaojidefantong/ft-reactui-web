@@ -1,0 +1,160 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.ft-collapse {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+          font-feature-settings: 'tnum';
+  background-color: #fafafa;
+  border: 1px solid #d9d9d9;
+  border-bottom: 0;
+  border-radius: 2px;
+}
+.ft-collapse > .ft-collapse-item {
+  border-bottom: 1px solid #d9d9d9;
+}
+.ft-collapse > .ft-collapse-item:last-child,
+.ft-collapse > .ft-collapse-item:last-child > .ft-collapse-header {
+  border-radius: 0 0 2px 2px;
+}
+.ft-collapse > .ft-collapse-item > .ft-collapse-header {
+  position: relative;
+  padding: 12px 16px;
+  padding-left: 40px;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 1.5715;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.ft-collapse > .ft-collapse-item > .ft-collapse-header::before {
+  display: table;
+  content: '';
+}
+.ft-collapse > .ft-collapse-item > .ft-collapse-header::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.ft-collapse > .ft-collapse-item > .ft-collapse-header .ft-collapse-arrow {
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  display: inline-block;
+  font-size: 12px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.ft-collapse > .ft-collapse-item > .ft-collapse-header .ft-collapse-arrow > * {
+  line-height: 1;
+}
+.ft-collapse > .ft-collapse-item > .ft-collapse-header .ft-collapse-arrow svg {
+  display: inline-block;
+}
+.ft-collapse > .ft-collapse-item > .ft-collapse-header .ft-collapse-arrow::before {
+  display: none;
+}
+.ft-collapse > .ft-collapse-item > .ft-collapse-header .ft-collapse-arrow .ft-collapse > .ft-collapse-item > .ft-collapse-header .ft-collapse-arrow-icon {
+  display: block;
+}
+.ft-collapse > .ft-collapse-item > .ft-collapse-header .ft-collapse-arrow svg {
+  -webkit-transition: -webkit-transform 0.24s;
+  transition: -webkit-transform 0.24s;
+  transition: transform 0.24s;
+  transition: transform 0.24s, -webkit-transform 0.24s;
+}
+.ft-collapse > .ft-collapse-item > .ft-collapse-header .ft-collapse-extra {
+  float: right;
+}
+.ft-collapse > .ft-collapse-item > .ft-collapse-header:focus {
+  outline: none;
+}
+.ft-collapse > .ft-collapse-item.ft-collapse-no-arrow > .ft-collapse-header {
+  padding-left: 12px;
+}
+.ft-collapse-icon-position-right > .ft-collapse-item > .ft-collapse-header {
+  padding: 12px 16px;
+  padding-right: 40px;
+}
+.ft-collapse-icon-position-right > .ft-collapse-item > .ft-collapse-header .ft-collapse-arrow {
+  right: 16px;
+  left: auto;
+}
+.ft-collapse-anim-active {
+  -webkit-transition: height 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: height 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.ft-collapse-content {
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.65);
+  background-color: #fff;
+  border-top: 1px solid #d9d9d9;
+}
+.ft-collapse-content > .ft-collapse-content-box {
+  padding: 16px;
+}
+.ft-collapse-content-inactive {
+  display: none;
+}
+.ft-collapse-item:last-child > .ft-collapse-content {
+  border-radius: 0 0 2px 2px;
+}
+.ft-collapse-borderless {
+  background-color: #fafafa;
+  border: 0;
+}
+.ft-collapse-borderless > .ft-collapse-item {
+  border-bottom: 1px solid #d9d9d9;
+}
+.ft-collapse-borderless > .ft-collapse-item:last-child,
+.ft-collapse-borderless > .ft-collapse-item:last-child .ft-collapse-header {
+  border-radius: 0;
+}
+.ft-collapse-borderless > .ft-collapse-item > .ft-collapse-content {
+  background-color: transparent;
+  border-top: 0;
+}
+.ft-collapse-borderless > .ft-collapse-item > .ft-collapse-content > .ft-collapse-content-box {
+  padding-top: 4px;
+}
+.ft-collapse .ft-collapse-item-disabled > .ft-collapse-header,
+.ft-collapse .ft-collapse-item-disabled > .ft-collapse-header > .arrow {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+.ft-collapse-rtl {
+  direction: rtl;
+}
+.ft-collapse-rtl .ft-collapse > .ft-collapse-item > .ft-collapse-header {
+  padding: 12px 16px;
+  padding-right: 40px;
+}
+.ft-collapse-rtl.ft-collapse > .ft-collapse-item > .ft-collapse-header .ft-collapse-arrow svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.ft-collapse-rtl.ft-collapse > .ft-collapse-item > .ft-collapse-header .ft-collapse-extra {
+  float: left;
+}
+.ft-collapse-rtl.ft-collapse > .ft-collapse-item.ft-collapse-no-arrow > .ft-collapse-header {
+  padding-right: 12px;
+  padding-left: 0;
+}

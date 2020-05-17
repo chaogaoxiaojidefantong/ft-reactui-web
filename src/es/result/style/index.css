@@ -1,0 +1,68 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.ft-result {
+  padding: 48px 32px;
+}
+.ft-result-success .ft-result-icon > .anticon {
+  color: #52c41a;
+}
+.ft-result-error .ft-result-icon > .anticon {
+  color: #ff4d4f;
+}
+.ft-result-info .ft-result-icon > .anticon {
+  color: #1890ff;
+}
+.ft-result-warning .ft-result-icon > .anticon {
+  color: #faad14;
+}
+.ft-result-image {
+  width: 250px;
+  height: 295px;
+  margin: auto;
+}
+.ft-result-icon {
+  margin-bottom: 24px;
+  text-align: center;
+}
+.ft-result-icon > .anticon {
+  font-size: 72px;
+}
+.ft-result-title {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 24px;
+  line-height: 1.8;
+  text-align: center;
+}
+.ft-result-subtitle {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+.ft-result-extra {
+  margin: 32px 0 0 0;
+  text-align: center;
+}
+.ft-result-extra > * {
+  margin-right: 8px;
+}
+.ft-result-extra > *:last-child {
+  margin-right: 0;
+}
+.ft-result-content {
+  margin-top: 24px;
+  padding: 24px 40px;
+  background-color: #fafafa;
+}
+.ft-result-rtl {
+  direction: rtl;
+}
+.ft-result-rtl .ft-result-extra > * {
+  margin-right: 0;
+  margin-left: 8px;
+}
+.ft-result-rtl .ft-result-extra > *:last-child {
+  margin-left: 0;
+}

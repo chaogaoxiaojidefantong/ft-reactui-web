@@ -17,7 +17,6 @@ function HookOne(){
   // 1. Use the name state variable
   const [name, setName] = useState('Mary');
 
-
   // 3. Use the surname state variable
   const [surname, setSurname] = useState('Poppins');
 

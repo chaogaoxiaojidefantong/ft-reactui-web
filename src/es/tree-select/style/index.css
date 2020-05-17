@@ -1,0 +1,905 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.ft-tree.ft-tree-directory .ft-tree-treenode {
+  position: relative;
+}
+.ft-tree.ft-tree-directory .ft-tree-treenode::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 4px;
+  left: 0;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  content: '';
+  pointer-events: none;
+}
+.ft-tree.ft-tree-directory .ft-tree-treenode:hover::before {
+  background: #f5f5f5;
+}
+.ft-tree.ft-tree-directory .ft-tree-treenode > * {
+  z-index: 1;
+}
+.ft-tree.ft-tree-directory .ft-tree-treenode .ft-tree-switcher {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.ft-tree.ft-tree-directory .ft-tree-treenode .ft-tree-node-content-wrapper {
+  border-radius: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.ft-tree.ft-tree-directory .ft-tree-treenode .ft-tree-node-content-wrapper:hover {
+  background: transparent;
+}
+.ft-tree.ft-tree-directory .ft-tree-treenode .ft-tree-node-content-wrapper.ft-tree-node-selected {
+  color: #fff;
+  background: transparent;
+}
+.ft-tree.ft-tree-directory .ft-tree-treenode-selected:hover::before,
+.ft-tree.ft-tree-directory .ft-tree-treenode-selected::before {
+  background: #1890ff;
+}
+.ft-tree.ft-tree-directory .ft-tree-treenode-selected .ft-tree-switcher {
+  color: #fff;
+}
+.ft-tree.ft-tree-directory .ft-tree-treenode-selected .ft-tree-node-content-wrapper {
+  color: #fff;
+  background: transparent;
+}
+.ft-tree-checkbox {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+          font-feature-settings: 'tnum';
+  position: relative;
+  top: -0.09em;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+}
+.ft-tree-checkbox-wrapper:hover .ft-tree-checkbox-inner,
+.ft-tree-checkbox:hover .ft-tree-checkbox-inner,
+.ft-tree-checkbox-input:focus + .ft-tree-checkbox-inner {
+  border-color: #1890ff;
+}
+.ft-tree-checkbox-checked::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #1890ff;
+  border-radius: 2px;
+  visibility: hidden;
+  -webkit-animation: antCheckboxEffect 0.36s ease-in-out;
+          animation: antCheckboxEffect 0.36s ease-in-out;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  content: '';
+}
+.ft-tree-checkbox:hover::after,
+.ft-tree-checkbox-wrapper:hover .ft-tree-checkbox::after {
+  visibility: visible;
+}
+.ft-tree-checkbox-inner {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 16px;
+  height: 16px;
+  direction: ltr;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  border-collapse: separate;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.ft-tree-checkbox-inner::after {
+  position: absolute;
+  top: 50%;
+  left: 22%;
+  display: table;
+  width: 5.71428571px;
+  height: 9.14285714px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: rotate(45deg) scale(0) translate(-50%, -50%);
+          transform: rotate(45deg) scale(0) translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+  transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+  content: ' ';
+}
+.ft-tree-checkbox-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+.ft-tree-checkbox-checked .ft-tree-checkbox-inner::after {
+  position: absolute;
+  display: table;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
+          transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  opacity: 1;
+  -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  content: ' ';
+}
+.ft-tree-checkbox-checked .ft-tree-checkbox-inner {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+.ft-tree-checkbox-disabled {
+  cursor: not-allowed;
+}
+.ft-tree-checkbox-disabled.ft-tree-checkbox-checked .ft-tree-checkbox-inner::after {
+  border-color: rgba(0, 0, 0, 0.25);
+  -webkit-animation-name: none;
+          animation-name: none;
+}
+.ft-tree-checkbox-disabled .ft-tree-checkbox-input {
+  cursor: not-allowed;
+}
+.ft-tree-checkbox-disabled .ft-tree-checkbox-inner {
+  background-color: #f5f5f5;
+  border-color: #d9d9d9 !important;
+}
+.ft-tree-checkbox-disabled .ft-tree-checkbox-inner::after {
+  border-color: #f5f5f5;
+  border-collapse: separate;
+  -webkit-animation-name: none;
+          animation-name: none;
+}
+.ft-tree-checkbox-disabled + span {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+.ft-tree-checkbox-disabled:hover::after,
+.ft-tree-checkbox-wrapper:hover .ft-tree-checkbox-disabled::after {
+  visibility: hidden;
+}
+.ft-tree-checkbox-wrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+          font-feature-settings: 'tnum';
+  display: inline-block;
+  line-height: unset;
+  cursor: pointer;
+}
+.ft-tree-checkbox-wrapper.ft-tree-checkbox-wrapper-disabled {
+  cursor: not-allowed;
+}
+.ft-tree-checkbox-wrapper + .ft-tree-checkbox-wrapper {
+  margin-left: 8px;
+}
+.ft-tree-checkbox + span {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.ft-tree-checkbox-group {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+          font-feature-settings: 'tnum';
+  display: inline-block;
+}
+.ft-tree-checkbox-group-item {
+  display: inline-block;
+  margin-right: 8px;
+}
+.ft-tree-checkbox-group-item:last-child {
+  margin-right: 0;
+}
+.ft-tree-checkbox-group-item + .ft-tree-checkbox-group-item {
+  margin-left: 0;
+}
+.ft-tree-checkbox-indeterminate .ft-tree-checkbox-inner {
+  background-color: #fff;
+  border-color: #d9d9d9;
+}
+.ft-tree-checkbox-indeterminate .ft-tree-checkbox-inner::after {
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #1890ff;
+  border: 0;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  content: ' ';
+}
+.ft-tree-checkbox-indeterminate.ft-tree-checkbox-disabled .ft-tree-checkbox-inner::after {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+.ft-tree {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+          font-feature-settings: 'tnum';
+  background: #fff;
+  border-radius: 2px;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.ft-tree-focused:not(:hover):not(.ft-tree-active-focused) {
+  background: #e6f7ff;
+}
+.ft-tree-list-holder-inner {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.ft-tree.ft-tree-block-node .ft-tree-list-holder-inner {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.ft-tree.ft-tree-block-node .ft-tree-list-holder-inner .ft-tree-node-content-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+.ft-tree .ft-tree-treenode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0 0 4px 0;
+  outline: none;
+}
+.ft-tree .ft-tree-treenode-disabled .ft-tree-node-content-wrapper {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+.ft-tree .ft-tree-treenode-disabled .ft-tree-node-content-wrapper:hover {
+  background: transparent;
+}
+.ft-tree .ft-tree-treenode-active .ft-tree-node-content-wrapper {
+  background: #f5f5f5;
+}
+.ft-tree-indent {
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.ft-tree-indent-unit {
+  display: inline-block;
+  width: 24px;
+}
+.ft-tree .ft-tree-switcher {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+.ft-tree .ft-tree-switcher .ft-tree-switcher-icon,
+.ft-tree .ft-tree-switcher .ft-select-tree-switcher-icon {
+  font-size: 10px;
+  display: inline-block;
+  font-weight: bold;
+}
+.ft-tree .ft-tree-switcher .ft-tree-switcher-icon svg,
+.ft-tree .ft-tree-switcher .ft-select-tree-switcher-icon svg {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.ft-tree .ft-tree-switcher-noop {
+  cursor: default;
+}
+.ft-tree .ft-tree-switcher_close .ft-tree-switcher-icon svg {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.ft-tree .ft-tree-switcher-loading-icon {
+  color: #1890ff;
+}
+.ft-tree .ft-tree-checkbox {
+  top: initial;
+  margin: 4px 8px 0 0;
+}
+.ft-tree .ft-tree-node-content-wrapper {
+  min-height: 24px;
+  margin: 0;
+  padding: 0 4px;
+  color: inherit;
+  line-height: 24px;
+  background: transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.ft-tree .ft-tree-node-content-wrapper:hover {
+  background-color: #f5f5f5;
+}
+.ft-tree .ft-tree-node-content-wrapper.ft-tree-node-selected {
+  background-color: #bae7ff;
+}
+.ft-tree .ft-tree-node-content-wrapper .ft-tree-iconEle {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: top;
+}
+.ft-tree .ft-tree-node-content-wrapper .ft-tree-iconEle:empty {
+  display: none;
+}
+.ft-tree-node-content-wrapper[draggable='true'] {
+  line-height: 20px;
+  border-top: 2px transparent solid;
+  border-bottom: 2px transparent solid;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.ft-tree .ft-tree-treenode.drag-over > [draggable] {
+  color: white;
+  background-color: #1890ff;
+  opacity: 0.8;
+}
+.ft-tree .ft-tree-treenode.drag-over-gap-top > [draggable] {
+  border-top-color: #1890ff;
+}
+.ft-tree .ft-tree-treenode.drag-over-gap-bottom > [draggable] {
+  border-bottom-color: #1890ff;
+}
+.ft-tree-show-line {
+  /* Motion should hide line of measure */
+}
+.ft-tree-show-line .ft-tree-indent-unit {
+  position: relative;
+  height: 100%;
+}
+.ft-tree-show-line .ft-tree-indent-unit::before {
+  position: absolute;
+  top: calc(100% - 4px);
+  right: -12px;
+  bottom: -28px;
+  border-right: 1px solid #d9d9d9;
+  content: '';
+}
+.ft-tree-show-line .ft-tree-indent-unit-end::before {
+  display: none;
+}
+.ft-tree-show-line .ft-tree-treenode-motion:not(.ft-motion-collapse-leave):not(.ft-motion-collapse-appear-active) .ft-tree-indent-unit::before {
+  display: none;
+}
+.ft-tree-show-line .ft-tree-switcher {
+  z-index: 1;
+  background: #fff;
+}
+.ft-tree-rtl {
+  direction: rtl;
+}
+.ft-tree .ft-tree-treenode-rtl {
+  direction: rtl;
+}
+.ft-tree-rtl.ft-tree .ft-tree-switcher_close .ft-tree-switcher-icon svg {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.ft-tree-rtl.ft-tree-show-line .ft-tree-indent-unit::before {
+  right: auto;
+  left: -12px;
+  border-right: none;
+  border-left: 1px solid #d9d9d9;
+}
+@-webkit-keyframes antCheckboxEffect {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@keyframes antCheckboxEffect {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+    opacity: 0;
+  }
+}
+.ft-select-tree-checkbox {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+          font-feature-settings: 'tnum';
+  position: relative;
+  top: -0.09em;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+}
+.ft-select-tree-checkbox-wrapper:hover .ft-select-tree-checkbox-inner,
+.ft-select-tree-checkbox:hover .ft-select-tree-checkbox-inner,
+.ft-select-tree-checkbox-input:focus + .ft-select-tree-checkbox-inner {
+  border-color: #1890ff;
+}
+.ft-select-tree-checkbox-checked::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #1890ff;
+  border-radius: 2px;
+  visibility: hidden;
+  -webkit-animation: antCheckboxEffect 0.36s ease-in-out;
+          animation: antCheckboxEffect 0.36s ease-in-out;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  content: '';
+}
+.ft-select-tree-checkbox:hover::after,
+.ft-select-tree-checkbox-wrapper:hover .ft-select-tree-checkbox::after {
+  visibility: visible;
+}
+.ft-select-tree-checkbox-inner {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 16px;
+  height: 16px;
+  direction: ltr;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  border-collapse: separate;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.ft-select-tree-checkbox-inner::after {
+  position: absolute;
+  top: 50%;
+  left: 22%;
+  display: table;
+  width: 5.71428571px;
+  height: 9.14285714px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: rotate(45deg) scale(0) translate(-50%, -50%);
+          transform: rotate(45deg) scale(0) translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+  transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+  content: ' ';
+}
+.ft-select-tree-checkbox-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+.ft-select-tree-checkbox-checked .ft-select-tree-checkbox-inner::after {
+  position: absolute;
+  display: table;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
+          transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  opacity: 1;
+  -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  content: ' ';
+}
+.ft-select-tree-checkbox-checked .ft-select-tree-checkbox-inner {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+.ft-select-tree-checkbox-disabled {
+  cursor: not-allowed;
+}
+.ft-select-tree-checkbox-disabled.ft-select-tree-checkbox-checked .ft-select-tree-checkbox-inner::after {
+  border-color: rgba(0, 0, 0, 0.25);
+  -webkit-animation-name: none;
+          animation-name: none;
+}
+.ft-select-tree-checkbox-disabled .ft-select-tree-checkbox-input {
+  cursor: not-allowed;
+}
+.ft-select-tree-checkbox-disabled .ft-select-tree-checkbox-inner {
+  background-color: #f5f5f5;
+  border-color: #d9d9d9 !important;
+}
+.ft-select-tree-checkbox-disabled .ft-select-tree-checkbox-inner::after {
+  border-color: #f5f5f5;
+  border-collapse: separate;
+  -webkit-animation-name: none;
+          animation-name: none;
+}
+.ft-select-tree-checkbox-disabled + span {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+.ft-select-tree-checkbox-disabled:hover::after,
+.ft-select-tree-checkbox-wrapper:hover .ft-select-tree-checkbox-disabled::after {
+  visibility: hidden;
+}
+.ft-select-tree-checkbox-wrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+          font-feature-settings: 'tnum';
+  display: inline-block;
+  line-height: unset;
+  cursor: pointer;
+}
+.ft-select-tree-checkbox-wrapper.ft-select-tree-checkbox-wrapper-disabled {
+  cursor: not-allowed;
+}
+.ft-select-tree-checkbox-wrapper + .ft-select-tree-checkbox-wrapper {
+  margin-left: 8px;
+}
+.ft-select-tree-checkbox + span {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.ft-select-tree-checkbox-group {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+          font-feature-settings: 'tnum';
+  display: inline-block;
+}
+.ft-select-tree-checkbox-group-item {
+  display: inline-block;
+  margin-right: 8px;
+}
+.ft-select-tree-checkbox-group-item:last-child {
+  margin-right: 0;
+}
+.ft-select-tree-checkbox-group-item + .ft-select-tree-checkbox-group-item {
+  margin-left: 0;
+}
+.ft-select-tree-checkbox-indeterminate .ft-select-tree-checkbox-inner {
+  background-color: #fff;
+  border-color: #d9d9d9;
+}
+.ft-select-tree-checkbox-indeterminate .ft-select-tree-checkbox-inner::after {
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #1890ff;
+  border: 0;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  content: ' ';
+}
+.ft-select-tree-checkbox-indeterminate.ft-select-tree-checkbox-disabled .ft-select-tree-checkbox-inner::after {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+.ft-tree-select-dropdown {
+  padding: 8px 4px 0;
+}
+.ft-tree-select-dropdown-rtl {
+  direction: rtl;
+}
+.ft-tree-select-dropdown .ft-select-tree {
+  border-radius: 0;
+}
+.ft-tree-select-dropdown .ft-select-tree-list-holder-inner {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.ft-tree-select-dropdown .ft-select-tree-list-holder-inner .ft-select-tree-treenode {
+  padding-bottom: 8px;
+}
+.ft-tree-select-dropdown .ft-select-tree-list-holder-inner .ft-select-tree-treenode .ft-select-tree-node-content-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+.ft-select-tree {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+          font-feature-settings: 'tnum';
+  background: #fff;
+  border-radius: 2px;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.ft-select-tree-focused:not(:hover):not(.ft-select-tree-active-focused) {
+  background: #e6f7ff;
+}
+.ft-select-tree-list-holder-inner {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.ft-select-tree.ft-select-tree-block-node .ft-select-tree-list-holder-inner {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.ft-select-tree.ft-select-tree-block-node .ft-select-tree-list-holder-inner .ft-select-tree-node-content-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+.ft-select-tree .ft-select-tree-treenode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0 0 4px 0;
+  outline: none;
+}
+.ft-select-tree .ft-select-tree-treenode-disabled .ft-select-tree-node-content-wrapper {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+.ft-select-tree .ft-select-tree-treenode-disabled .ft-select-tree-node-content-wrapper:hover {
+  background: transparent;
+}
+.ft-select-tree .ft-select-tree-treenode-active .ft-select-tree-node-content-wrapper {
+  background: #f5f5f5;
+}
+.ft-select-tree-indent {
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.ft-select-tree-indent-unit {
+  display: inline-block;
+  width: 24px;
+}
+.ft-select-tree .ft-select-tree-switcher {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+.ft-select-tree .ft-select-tree-switcher .ft-tree-switcher-icon,
+.ft-select-tree .ft-select-tree-switcher .ft-select-tree-switcher-icon {
+  font-size: 10px;
+  display: inline-block;
+  font-weight: bold;
+}
+.ft-select-tree .ft-select-tree-switcher .ft-tree-switcher-icon svg,
+.ft-select-tree .ft-select-tree-switcher .ft-select-tree-switcher-icon svg {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.ft-select-tree .ft-select-tree-switcher-noop {
+  cursor: default;
+}
+.ft-select-tree .ft-select-tree-switcher_close .ft-select-tree-switcher-icon svg {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.ft-select-tree .ft-select-tree-switcher-loading-icon {
+  color: #1890ff;
+}
+.ft-select-tree .ft-select-tree-checkbox {
+  top: initial;
+  margin: 4px 8px 0 0;
+}
+.ft-select-tree .ft-select-tree-node-content-wrapper {
+  min-height: 24px;
+  margin: 0;
+  padding: 0 4px;
+  color: inherit;
+  line-height: 24px;
+  background: transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.ft-select-tree .ft-select-tree-node-content-wrapper:hover {
+  background-color: #f5f5f5;
+}
+.ft-select-tree .ft-select-tree-node-content-wrapper.ft-select-tree-node-selected {
+  background-color: #bae7ff;
+}
+.ft-select-tree .ft-select-tree-node-content-wrapper .ft-select-tree-iconEle {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: top;
+}
+.ft-select-tree .ft-select-tree-node-content-wrapper .ft-select-tree-iconEle:empty {
+  display: none;
+}
+.ft-select-tree-node-content-wrapper[draggable='true'] {
+  line-height: 20px;
+  border-top: 2px transparent solid;
+  border-bottom: 2px transparent solid;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.ft-select-tree .ft-select-tree-treenode.drag-over > [draggable] {
+  color: white;
+  background-color: #1890ff;
+  opacity: 0.8;
+}
+.ft-select-tree .ft-select-tree-treenode.drag-over-gap-top > [draggable] {
+  border-top-color: #1890ff;
+}
+.ft-select-tree .ft-select-tree-treenode.drag-over-gap-bottom > [draggable] {
+  border-bottom-color: #1890ff;
+}
+.ft-select-tree-show-line {
+  /* Motion should hide line of measure */
+}
+.ft-select-tree-show-line .ft-select-tree-indent-unit {
+  position: relative;
+  height: 100%;
+}
+.ft-select-tree-show-line .ft-select-tree-indent-unit::before {
+  position: absolute;
+  top: calc(100% - 4px);
+  right: -12px;
+  bottom: -28px;
+  border-right: 1px solid #d9d9d9;
+  content: '';
+}
+.ft-select-tree-show-line .ft-select-tree-indent-unit-end::before {
+  display: none;
+}
+.ft-select-tree-show-line .ft-select-tree-treenode-motion:not(.ft-motion-collapse-leave):not(.ft-motion-collapse-appear-active) .ft-select-tree-indent-unit::before {
+  display: none;
+}
+.ft-select-tree-show-line .ft-select-tree-switcher {
+  z-index: 1;
+  background: #fff;
+}
+.ft-select-tree-rtl {
+  direction: rtl;
+}
+.ft-select-tree .ft-select-tree-treenode-rtl {
+  direction: rtl;
+}
+.ft-select-tree-rtl.ft-select-tree .ft-select-tree-switcher_close .ft-select-tree-switcher-icon svg {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.ft-select-tree-rtl.ft-select-tree-show-line .ft-select-tree-indent-unit::before {
+  right: auto;
+  left: -12px;
+  border-right: none;
+  border-left: 1px solid #d9d9d9;
+}
+.ft-tree-select-dropdown-rtl .ft-select-tree .ft-select-tree-switcher_close .ft-select-tree-switcher-icon svg {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}

@@ -15,6 +15,7 @@ import {
     useParams
   } from "react-router-dom";
   import Index from './install/index'
+  import { DatePicker, message } from 'cgft-ui';
 // class Home extends Component{  
 //     componentDidMount(){
        
@@ -69,6 +70,7 @@ function Home(){
                 </article>
              </FtContainer>
              <FtButton>ananiusai</FtButton>
+             <DatePicker></DatePicker>
              <div className='home-right'>
                 <Switch>
                     <Route path={`${path}/install`}  exact>

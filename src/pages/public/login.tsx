@@ -5,11 +5,16 @@ import UserIe from '../../interface/UserIe';
 import { Notify} from 'zent';
 import history from '../../router/history'
 import ErrorBoundary from './ErrorBoundary'
+//import FtContainer from '../../components/ft/component/container2'
+import FtContainer from '../../lib/ft-container/index'
+import '../../dist/ftui.css'
 const authenticate=new Authenticate();
 interface formIe{
     email:string;
     pwd:string
 }
+const a1=<div style={{width:"200px",height:"200px",backgroundColor:"red"}}></div>
+const a2= <p style={{color:'black'}}>haixingba</p>
 class Login extends Component{
     static displayName:string;
     constructor(){
@@ -40,12 +45,15 @@ class Login extends Component{
     }
 
     componentWillMount(){
-        
+        let a=''||'22'
+        debugger
     }
+
     render(){
         return(            
             <Fragment >
-                login                   
+                <FtContainer style={{width:'300px',height:'300px'}} bg={a1} con={a2}>                 
+                </FtContainer>                 
             </Fragment>
         )
     }
