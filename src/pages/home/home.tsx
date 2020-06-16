@@ -1,5 +1,5 @@
 /* eslint-disable default-case */
-import React, { Component,useState,ReactNode } from 'react';
+import React, { Component,useState,ReactNode,useEffect } from 'react';
 import './home.less'
 import {FtContainer, FtButton} from '../../components/ft/index'
 import {FtP1,FtP2,FtP3} from '../../components/ft/index'
@@ -15,7 +15,10 @@ import {
     useParams
   } from "react-router-dom";
   import Index from './install/index'
-  import { DatePicker, message } from 'cgft-ui';
+  import { DatePicker, message,Button } from 'cgft-ui';
+  import store from '../../store/store'
+  import {LoginThunks} from '../../store/thunks/UserThunks'
+  import {login} from '../../store/actions/UserActions'
 // class Home extends Component{  
 //     componentDidMount(){
        
@@ -43,7 +46,6 @@ import {
 
   function BlogPost() {   
     let match = useRouteMatch({path:"/home/:id",exact:false});  
-    debugger
     // Do whatever you want with the match...
     return <div />;
   }
@@ -57,6 +59,16 @@ function Home(){
     function handerJump(url:string){
         history.push(url);
     }
+    useEffect(()=>{
+        let user={userName:'zz',age:12}
+        //store.dispatch(login(user)); 
+        store.dispatch(LoginThunks(user));
+    },[])
+
+    useEffect(()=>{
+      const {user}= store.getState();
+    },[])
+    
     return(
         <div className='home'>
              <FtContainer width='220px' height='900px'>
@@ -70,6 +82,7 @@ function Home(){
                 </article>
              </FtContainer>
              <FtButton>ananiusai</FtButton>
+             <Button>cgftui</Button>
              <DatePicker></DatePicker>
              <div className='home-right'>
                 <Switch>

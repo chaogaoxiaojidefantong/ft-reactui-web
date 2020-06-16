@@ -6,8 +6,10 @@ import { Notify} from 'zent';
 import history from '../../router/history'
 import ErrorBoundary from './ErrorBoundary'
 //import FtContainer from '../../components/ft/component/container2'
-import FtContainer from '../../lib/ft-container/index'
-import '../../dist/ftui.css'
+import {FtContainer,Cascader,regionsUtil,FtLine} from 'cgft-ui'
+import 'cgft-ui/dist/ft.css'
+import { connect } from "react-redux";
+import {loginGo} from '../../store/actions/UserActions'
 const authenticate=new Authenticate();
 interface formIe{
     email:string;
@@ -15,13 +17,30 @@ interface formIe{
 }
 const a1=<div style={{width:"200px",height:"200px",backgroundColor:"red"}}></div>
 const a2= <p style={{color:'black'}}>haixingba</p>
-class Login extends Component{
+interface Person {
+    name: string;
+    age: number;
+    location: string;
+  }
+let a='22'
+type A1=typeof a
+let b:A1='33'
+interface PropsIe{
+    loginGo:any;
+    user:any;
+}
+class Login extends Component<PropsIe,{}>{
     static displayName:string;
-    constructor(){
-        super({});      
+    constructor(props){
+        super(props);   
+        let v=this.props.user; 
+        this.props.loginGo({userName:'zz',age:19})     
     }
-    componentDidMount(){
-       
+    componentDidMount(){    
+       let a:string[][]=[['2']]
+    }
+    componentWillReceiveProps(nextProps){ 
+        let p=nextProps.user;
     }
     submit(options:formIe){
         import('../../components/ft/index').then(index=>{
@@ -46,16 +65,30 @@ class Login extends Component{
 
     componentWillMount(){
         let a=''||'22'
-        debugger
+        userActions.login({userPwd:'123',userEmail:'123'}).then((res:any)=>{
+            debugger
+        },(err=>{
+            debugger
+        }))
     }
 
     render(){
         return(            
-            <Fragment >
-                <FtContainer style={{width:'300px',height:'300px'}} bg={a1} con={a2}>                 
-                </FtContainer>                 
+            <Fragment >     
+                <div></div>
+                <FtLine leftContent="名字">nihaoa</FtLine>
+                <FtLine leftContent="小学生">nihaoa</FtLine>           
             </Fragment>
         )
     }
 }
-export default Login;
+const mapStateToProps=(state,ownProps)=>{
+    const {user}=state
+    return {user:user};
+}
+const mapDispatchToProps=(dispatch,ownProps)=>{
+   return{
+       loginUser:()=>dispatch(loginGo({userName:'pp',age:19}))
+   }
+}
+export default connect(mapStateToProps,{loginGo})(Login);

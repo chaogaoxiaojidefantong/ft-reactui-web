@@ -1,8 +1,8 @@
 import {axios} from '../libs/api.request'
-class UserMapper{
+class UserMapper{ 
     getLoginMessage = (data:any) => {
         return axios.request({
-          url: "/adminServiceZuul/User/login",
+          url: "http://localhost:10002/User/login",
           method: "post",
           data: data
         });

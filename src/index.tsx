@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'zent/css/index.css';
 import FtRouter from './router/';
 import { Provider } from 'react-redux'
-import {createStore, combineReducers, applyMiddleware} from 'redux';
 import 'element-theme-default';
+import store from './store/store'
 // const render=(Component:any)=>{
 //     ReactDOM.render(
 //           <Component />,
@@ -16,7 +15,10 @@ import 'element-theme-default';
 //    }
 //    render(FtRouter);
 ReactDOM.render(
-  <FtRouter />,
+  <Provider store={store}>
+    <FtRouter />
+  </Provider>
+  ,
   document.getElementById('root')
   );
 
