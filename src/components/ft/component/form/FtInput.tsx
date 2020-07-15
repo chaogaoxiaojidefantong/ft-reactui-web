@@ -33,6 +33,8 @@ class FtInput extends Component<Props,StateIe>{
 
 
     handleChage(event:any){
+        let p=event.target.value
+        debugger
         this.props.onInputChange(event.target.value);      
     }
 
@@ -63,7 +65,7 @@ class FtInput extends Component<Props,StateIe>{
     render(){
         return(
             <div className='FtInput'>
-                <input type="text"  onChange={this.handleChage.bind(this)} value={this.props.value} style={this.state.styles} ref={this.props.inputRef}/>
+                <input type="text"  onChange={this.handleChage.bind(this)}  style={this.state.styles} ref={this.props.inputRef}/>
             </div>
         )
     }

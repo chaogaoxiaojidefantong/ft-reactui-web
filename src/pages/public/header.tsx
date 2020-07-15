@@ -2,7 +2,7 @@ import React, { Component,Fragment } from 'react';
 import {Select} from 'element-react'
 import '../../style/public/header.less'
 import {FtHeader} from '../../components/ft/index';
-
+import {Input} from 'antd'
 interface StateIe{
     options:Array<any>,
     value:string
@@ -38,6 +38,7 @@ class Header extends Component{
           }
             </Select>
           </FtHeader>
+          <Input placeholder='333'></Input>
         </Fragment>
         )
     }

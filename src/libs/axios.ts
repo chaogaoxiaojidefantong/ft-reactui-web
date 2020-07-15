@@ -36,13 +36,15 @@ class HttpRequest{
             return Promise.reject(error);
           });
           axiosInstance.interceptors.response.use((res:any)=>{
+            debugger
             const { data, status } = res
             if(status!==200){
               alert('服务器内部出错');
               return '服务器内部出错';
             }
             return  data
-          },(err:any)=>{        
+          },(err:any)=>{ 
+            debugger       
             return Promise.reject('服务器内部出错');
           })
       };

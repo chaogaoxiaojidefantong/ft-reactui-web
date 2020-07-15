@@ -5,6 +5,7 @@ import {FtContainer, FtButton} from '../../components/ft/index'
 import {FtP1,FtP2,FtP3} from '../../components/ft/index'
 import HookOne from '../../components/ft/component/hook/HookOne';
 import history from '../../router/history'
+import Cookies from 'js-cookie'
 import {
     Router,
     BrowserRouter,
@@ -19,6 +20,7 @@ import {
   import store from '../../store/store'
   import {LoginThunks} from '../../store/thunks/UserThunks'
   import {login} from '../../store/actions/UserActions'
+  import {Input} from 'antd'
 // class Home extends Component{  
 //     componentDidMount(){
        
@@ -55,6 +57,7 @@ import {
 
 
 function Home(){
+  Cookies.set('age','12');
     let { path } = useRouteMatch();
     function handerJump(url:string){
         history.push(url);
@@ -84,13 +87,15 @@ function Home(){
              <FtButton>ananiusai</FtButton>
              <Button>cgftui</Button>
              <DatePicker></DatePicker>
+              
              <div className='home-right'>
                 <Switch>
                     <Route path={`${path}/install`}  exact>
                         <Index></Index>
                     </Route>                       
                 </Switch>
-             </div>      
+             </div>  
+                 
         </div>
     )
 }

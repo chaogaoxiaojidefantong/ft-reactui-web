@@ -7,6 +7,7 @@ import FtRouter from './router/';
 import { Provider } from 'react-redux'
 import 'element-theme-default';
 import store from './store/store'
+import 'antd/dist/antd.css';
 // const render=(Component:any)=>{
 //     ReactDOM.render(
 //           <Component />,

@@ -1,4 +1,4 @@
-import React, { Component,Fragment } from 'react';
+import React, { Component,Fragment,MouseEventHandler } from 'react';
 import Authenticate from '../../router/verify/authenticate'
 import userActions from '../../actions/UserActions'
 import UserIe from '../../interface/UserIe';
@@ -10,6 +10,10 @@ import {FtContainer,Cascader,regionsUtil,FtLine} from 'cgft-ui'
 import 'cgft-ui/dist/ft.css'
 import { connect } from "react-redux";
 import {loginGo} from '../../store/actions/UserActions'
+import userMapper from '../../mapper/UserMapper'
+import  Footer from './footer'
+import axios from 'axios'
+import Cookies from 'js-cookie'
 const authenticate=new Authenticate();
 interface formIe{
     email:string;
@@ -29,15 +33,40 @@ interface PropsIe{
     loginGo:any;
     user:any;
 }
-class Login extends Component<PropsIe,{}>{
+const foo = function* () {
+    yield 'foo';
+    //yield * bar();
+};
+ 
+const bar = function* () {
+    yield 'bar';
+};
+
+class Login extends Component<PropsIe,{defaultInputValue:string}>{
     static displayName:string;
+    state:{defaultInputValue:string,value:string}={
+          defaultInputValue:'66',
+          value:''  
+    }
     constructor(props){
         super(props);   
         let v=this.props.user; 
         this.props.loginGo({userName:'zz',age:19})     
     }
-    componentDidMount(){    
+    componentDidMount(){     
        let a:string[][]=[['2']]
+       let p=Cookies.get('token');
+       Cookies.set('name','sansan');
+       debugger
+    //    axios.get('/tengxun/File/json',{method:'get',params:{session:'component',page:'cascader'}}).then(res=>{
+    //     debugger
+    //    },err=>{
+    //        debugger
+    //    })
+       axios({method:'get',url:'/tengxun/File/json',params:{session:'component',page:'cascader'},headers:{Accept:'*'}}).then(res=>{
+       },err=>{
+       })
+     
     }
     componentWillReceiveProps(nextProps){ 
         let p=nextProps.user;
@@ -63,21 +92,39 @@ class Login extends Component<PropsIe,{}>{
         })  
     }
 
-    componentWillMount(){
-        let a=''||'22'
-        userActions.login({userPwd:'123',userEmail:'123'}).then((res:any)=>{
-            debugger
-        },(err=>{
-            debugger
-        }))
+    eventOne(e:MouseEvent){
+        e.stopPropagation();
     }
+    eventTwo(e:MouseEvent){
+        e.stopPropagation();
+        debugger
+    }
+
+    
+
+    // componentWillMount(){
+    //     let a=''||'22'
+    //     userActions.login({userPwd:'123',userEmail:'123'}).then((res:any)=>{
+            
+    //     },(err=>{
+    //         debugger
+    //     }))
+    // }
 
     render(){
         return(            
             <Fragment >     
-                <div></div>
-                <FtLine leftContent="名字">nihaoa</FtLine>
-                <FtLine leftContent="小学生">nihaoa</FtLine>           
+                <div>
+                <FtLine leftContent="名字" >nihaoa</FtLine>
+                <FtLine leftContent="小学生">nihaoa</FtLine>    
+                </div>
+                <Footer defaultValue={this.state.defaultInputValue}>
+                </Footer> 
+                <button onClick={()=>{this.setState({defaultInputValue:'77'})}}>改变默认值</button>
+                <div onClick={this.eventTwo.bind(this)}>
+                <p onClick={this.eventOne.bind(this)}>你好呀</p>    
+                <p >sansan</p>
+                </div>             
             </Fragment>
         )
     }

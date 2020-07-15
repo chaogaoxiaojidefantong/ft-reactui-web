@@ -9,7 +9,8 @@ class FtButton extends Component{
     
   }
   componentWillMount(){
-     
+      let p='name'
+        let a='vvv'
   }
     render(){
         let value=this.context;
